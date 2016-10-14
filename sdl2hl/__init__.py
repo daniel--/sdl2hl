@@ -12,3 +12,4 @@ from error import SDLError
 from gamecontroller import *
 import image
 import mixer
+import gfx

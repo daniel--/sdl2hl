@@ -25,6 +25,20 @@ class GfxPrimitives(object):
             SDLError: If an error is encountered.
         """
         check_int_err(lib.circleRGBA(self._ptr, x, y, r, color[0], color[1], color[2], color[3]))
+
+    def draw_filled_circle(self, x, y, r, color):
+        """Draw a filled circle.
+
+        Args:
+            x (int): The x coordinate of the center of the circle.
+            y (int): The y coordinate of the center of the circle.
+            r (int): The radius of the circle.
+            color (Tuple[int, int, int, int]): The color of the circle.
+
+        Raises:
+            SDLError: If an error is encountered.
+        """
+        check_int_err(lib.filledCircleRGBA(self._ptr, x, y, r, color[0], color[1], color[2], color[3]))
         
     def draw_arc(self, x, y, r, start, end, color):
         """Draw an arc.
