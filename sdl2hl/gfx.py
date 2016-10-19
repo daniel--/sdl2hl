@@ -71,3 +71,20 @@ class GfxPrimitives(object):
 
         """
         check_int_err(lib.lineRGBA(self._ptr, x1, y1, x2, y2, color[0], color[1], color[2], color[3]))
+
+    def draw_filled_trigon(self, x1, y1, x2, y2, x3, y3, color):
+        """Draw a filled trigon
+
+        Args:
+            x1 (int): The x cooridinate of the first corner of the trigon
+            y1 (int): The y cooridinate of the first corner of the trigon
+            x2 (int): The x cooridinate of the second corner of the trigon
+            y2 (int): The y cooridinate of the second corner of the trigon
+            x3 (int): The x cooridinate of the third corner of the trigon
+            y3 (int): The y cooridinate of the third corner of the trigon
+            color (Tuple[int, int, int, int]): The color of the trigon.
+
+        Raises:
+            SDLError: If an error is encountered.
+            """
+        check_int_err(lib.filledTrigonRGBA(self._ptr, x1, y1, x2, y2, x3, y3, color[0], color[1], color[2], color[3]))
